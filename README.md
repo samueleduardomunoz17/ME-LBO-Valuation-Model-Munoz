@@ -1,1 +1,42 @@
-📊 Mid-Market SME Valuation & LBO ModelProject OverviewThis repository contains a comprehensive, macro-enabled financial model built from scratch for a mid-market Italian SME operating in the automatic packaging machinery sector. The project employs a dual-track valuation approach, integrating a Discounted Cash Flow (DCF) analysis and a Leveraged Buyout (LBO) transaction model, supported by a fully linked 7-year 3-statement forecast.Model Architecture & Technical Mechanics1. Dynamic 3-Statement Forecast & OperationsRevenue & Cost Drivers: Built dynamic schedules for volumetric growth, pricing adjustments, and COGS breakdown (anchored to a stabilized 24% historical incidence) to project the Income Statement.Working Capital & Capex: Modeled D&A schedules via a detailed PP&E waterfall. Net Working Capital variations are driven by historical DSO, DPO, and DIO metrics.Prospective Financial Requirements: Modeled strictly on a gross basis (Sources vs. Uses) to dynamically derive the net external funding requirement as a residual plug, ensuring mathematical integrity in cash flow generation.2. Transaction Structuring (Cash-Free / Debt-Free)Asset Carve-out: Identified ~€40M in non-core financial assets (short-term securities and intercompany receivables) in the statutory balance sheet.Pre-Closing Spin-off: To accurately assess the operating Enterprise Value, the model assumes a pre-closing dividend recap/spin-off of these non-operating assets. The NewCo starts Year 1 with a purely operational minimum cash balance, effectively stress-testing the standalone cash-generating capacity.3. LBO Mechanics & Debt SizingEntry & Leverage: Assumes a 6.5x EV/Forward EBITDA entry multiple, resulting in a ~€24M Core EV. Debt capacity is sized conservatively on LTM EBITDA (4.5x).Debt Waterfall: Incorporates a tiered capital structure:Senior Debt: 3.0x LTM EBITDA @ 6.0% (amortizing).Subordinated Debt: 1.5x LTM EBITDA @ 7.5% (bullet/mezzanine structure).Cash Sweep & RCF: Integrated an automated Revolving Credit Facility (RCF) logic using MIN/MAX functions to fund potential liquidity shortfalls and an optional cash sweep mechanism for accelerated debt repayment.Returns Analysis: Calculates Sponsor IRR (~21.8%) and Cash-on-Cash (MoIC) across a 7-year hold period.4. Valuation (DCF & CAPM)Calculated the Free Cash Flow to Firm (FCFF) and Free Cash Flow to Equity (FCFE).WACC Calculation: Explicit derivation of the Cost of Equity ($Ke$) using the CAPM framework, incorporating the Risk-Free Rate, an unlevered-to-relevered Beta based on industry comparables, and the Italian Market Risk Premium.Sensitivities: Implemented 2-dimensional Data Tables crossing WACC vs. Terminal Growth Rate ($g$), and Exit Multiple vs. Entry Multiple to triangulate the implied EV.⚙️ VBA & Usage InstructionsThe model utilizes VBA macros to switch between different operational scenarios (Base, Downside, Upside) which dynamically update revenue growth rates and margin assumptions throughout the integrated statements.To run the model locally:Download the .xlsm file.Open in Microsoft Excel desktop.Click "Enable Content" on the yellow security warning bar to activate the scenario-selection macros.
+📊 Mid-Market SME Valuation & LBO Model
+
+Project Overview
+
+This repository contains a comprehensive, macro-enabled financial model built from scratch for a mid-market Italian SME operating in the automatic packaging machinery sector. The project employs a dual-track valuation approach, integrating a Discounted Cash Flow (DCF) analysis and a Leveraged Buyout (LBO) transaction model, supported by a fully linked 7-year 3-statement forecast.
+
+Model Architecture & Technical Mechanics
+
+1. Dynamic 3-Statement Forecast & Operations
+
+Revenue & Cost Drivers: Built dynamic schedules for volumetric growth, pricing adjustments, and COGS breakdown (anchored to a stabilized 24% historical incidence) to project the Income Statement.
+Working Capital & Capex: Modeled D&A schedules via a detailed PP&E waterfall. Net Working Capital variations are driven by historical DSO, DPO, and DIO metrics.
+Prospective Financial Requirements: Modeled strictly on a gross basis (Sources vs. Uses) to dynamically derive the net external funding requirement as a residual plug, ensuring mathematical integrity in cash flow generation.
+
+2. Transaction Structuring (Cash-Free / Debt-Free)
+
+Asset Carve-out: Identified ~€40M in non-core financial assets (short-term securities and intercompany receivables) in the statutory balance sheet.
+Pre-Closing Spin-off: To accurately assess the operating Enterprise Value, the model assumes a pre-closing dividend recap/spin-off of these non-operating assets. The NewCo starts Year 1 with a purely operational minimum cash balance, effectively stress-testing the standalone cash-generating capacity.
+
+3. LBO Mechanics & Debt Sizing
+
+Entry & Leverage: Assumes a 6.5x EV/Forward EBITDA entry multiple, resulting in a ~€24M Core EV. Debt capacity is sized conservatively on LTM EBITDA (4.5x).
+Debt Waterfall: Incorporates a tiered capital structure:
+Senior Debt: 3.0x LTM EBITDA @ 6.0% (amortizing).
+Subordinated Debt: 1.5x LTM EBITDA @ 7.5% (bullet/mezzanine structure).
+Returns Analysis: Calculates Sponsor IRR (~21.8%) and Cash-on-Cash (MoIC) across a 7-year hold period.
+
+4. Valuation (DCF & CAPM)
+
+Calculated the Free Cash Flow to Firm (FCFF) and Free Cash Flow to Equity (FCFE).
+WACC Calculation: Explicit derivation of the Cost of Equity ($Ke$) using the CAPM framework, incorporating the Risk-Free Rate, an unlevered-to-relevered Beta based on industry comparables, and the Italian Market Risk Premium.
+Sensitivities: Implemented 2-dimensional Data Tables crossing WACC vs. Terminal Growth Rate ($g$), and Exit Multiple vs. Entry Multiple to triangulate the implied EV.
+
+### 📌 Methodological Note: Standalone vs. Consolidated Financials
+Please note that the historical data and subsequent projections in this model are based on the company's **standalone statutory financials**. In a real-world M&A transaction, consolidated financial statements would be utilized to capture the full economic scope of the group, its subsidiaries, and intercompany eliminations. This standalone perimeter was deliberately selected for the purpose of this project to isolate specific operational mechanics and demonstrate the core LBO and valuation modeling framework.
+
+⚙️ VBA & Usage InstructionsThe model utilizes VBA macros to switch between different operational scenarios (Base, Downside, Upside) which dynamically update revenue growth rates and margin assumptions throughout the integrated statements.
+To run the model locally:
+
+Download the .xlsm file.
+Open in Microsoft Excel desktop.
+Click "Enable Content" on the yellow security warning bar to activate the scenario-selection macros.
